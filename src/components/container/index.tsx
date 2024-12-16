@@ -11,7 +11,7 @@ export default function Container(props: {
     <div className={`w-full h-full flex flex-col ${props.base ? "bg-base" : ""}`}>
       {props.header}
       {props.children}
-      {props.footer && <Footer toTerms={() => {}} />}
+      {props.footer && <Footer />}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Icon from "../icon";
 
-export default function Footer(props: { toTerms: () => void }) {
+export default function Footer() {
   return (
     <div className="flex flex-col gap-5 w-full md:border-t border-main-brown">
       <div className="md:pl-[96px] p-5 pb-8 flex flex-col gap-6">
