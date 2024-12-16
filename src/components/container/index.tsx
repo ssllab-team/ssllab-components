@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Footer from "../footer";
 
 export default function Container(props: {
-  header?: boolean;
+  header?: ReactNode;
   footer?: ReactNode;
   children?: ReactNode;
   base?: boolean;
