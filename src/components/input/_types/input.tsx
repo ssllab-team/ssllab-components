@@ -20,7 +20,7 @@ export default function Text(props: {
 }) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    props.onChange && props.onChange(value);
+    if (props.onChange) props.onChange(value);
   };
 
   const Items = {

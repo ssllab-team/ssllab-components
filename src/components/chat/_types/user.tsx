@@ -30,7 +30,7 @@ export default function User(props: {
   };
 
   const handleSend = () => {
-    props.onEdit && props.onEdit(message);
+    if (props.onEdit) props.onEdit(message);
     setEdit(false);
   };
 

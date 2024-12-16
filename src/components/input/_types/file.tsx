@@ -22,7 +22,7 @@ export default function File(props: { onChange?: (files: File[]) => void }) {
       const filteredFiles = fileArray.filter((file) => allowedExtensions.includes(file.type));
       const newFileArray = fileData.concat(filteredFiles);
       setFileData(newFileArray);
-      props.onChange && props.onChange(newFileArray);
+      if (props.onChange) props.onChange(newFileArray);
     }
     setIsDragging(false);
   };
@@ -53,7 +53,7 @@ export default function File(props: { onChange?: (files: File[]) => void }) {
 
       const newFileArray = fileData.concat(filteredFiles);
       setFileData(newFileArray);
-      props.onChange && props.onChange(newFileArray);
+      if (props.onChange) props.onChange(newFileArray);
     }
   };
 
