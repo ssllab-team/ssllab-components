@@ -1,8 +1,8 @@
 import { ChangeEvent, useRef, useEffect, useState } from "react";
 import { inputBaseClass } from "..";
-import Icon from "@/components/icon";
-import { Popover, PopoverTrigger } from "@/components/ui/popover";
-import Popovers from "@/components/popover";
+import { Popover, PopoverTrigger } from "../../ui/popover";
+import Icon from "../../icon";
+import Popovers from "../../popover";
 
 export default function Textarea(props: {
   onChange: (e: string) => void;

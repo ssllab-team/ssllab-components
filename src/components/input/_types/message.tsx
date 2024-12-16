@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import Button from "@/components/button";
-import Icon from "@/components/icon";
+import Button from "../../button";
+import Icon from "../../icon";
 
 export default function Message(props: {
   onSend?: (e: string) => void;

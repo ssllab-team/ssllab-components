@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import { inputBaseClass } from "..";
-import Icon from "@/components/icon";
+import Icon from "../../icon";
 
 export default function Search(props: { onChange?: (e: string) => void; value?: string; placeholder?: string }) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

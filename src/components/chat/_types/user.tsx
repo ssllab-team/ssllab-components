@@ -1,7 +1,7 @@
-import Button from "@/components/button";
-import Icon from "@/components/icon";
 import { ChangeEvent, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
+import Button from "../../button";
+import Icon from "../../icon";
 
 export default function User(props: {
   message: string;

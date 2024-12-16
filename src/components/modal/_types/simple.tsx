@@ -1,5 +1,5 @@
-import Button from "@/components/button";
 import React, { ReactNode, useEffect, useState } from "react";
+import Button from "../../button";
 
 export default function Simple(props: {
   title?: string;

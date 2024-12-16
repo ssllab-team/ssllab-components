@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { inputBaseClass } from "..";
-import Icon from "@/components/icon";
+import Icon from "../../icon";
 
 export default function Text(props: {
   onChange?: (e: string) => void;

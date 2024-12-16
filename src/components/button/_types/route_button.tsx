@@ -1,5 +1,5 @@
-import Button from "@/components/button";
 import { ReactNode, useState } from "react";
+import Button from "..";
 
 export default function LoadingButton(props: {
   variant: "primary" | "secondary" | "tertiary" | "text_main" | "text_sub" | "add";

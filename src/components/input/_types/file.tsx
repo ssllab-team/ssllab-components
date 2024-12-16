@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import Button from "@/components/button";
-import Icon from "@/components/icon";
+import { useRef, useState } from "react";
+import Button from "../../button";
+import Icon from "../../icon";
 
 export default function File(props: { onChange?: (files: File[]) => void }) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);

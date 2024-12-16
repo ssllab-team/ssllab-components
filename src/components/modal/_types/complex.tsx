@@ -1,6 +1,6 @@
-import Button from "@/components/button";
-import Icon from "@/components/icon";
 import React, { ReactNode, useEffect, useState } from "react";
+import Button from "../../button";
+import Icon from "../../icon";
 
 export default function Complex(props: {
   contents: {
