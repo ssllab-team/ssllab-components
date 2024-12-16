@@ -1,9 +1,7 @@
-"use client";
-
 import Button from "@/components/button";
 import { ReactNode, useState } from "react";
 
-export default function RouteButton(props: {
+export default function LoadingButton(props: {
   variant: "primary" | "secondary" | "tertiary" | "text_main" | "text_sub" | "add";
   size: "icon_only" | "small" | "medium" | "large" | "text" | "add";
   children?: string;

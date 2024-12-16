@@ -1,5 +1,3 @@
-"use client";
-
 import { ReactNode, useEffect, useState } from "react";
 
 export default function Toast(props: { message: string; icon: ReactNode; variant: keyof typeof colors }) {
@@ -7,8 +5,8 @@ export default function Toast(props: { message: string; icon: ReactNode; variant
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    let showTimeout: NodeJS.Timeout;
-    let hideTimeout: NodeJS.Timeout;
+    let showTimeout;
+    let hideTimeout;
 
     setVisible(true);
     showTimeout = setTimeout(() => setAnimate(true), 10);

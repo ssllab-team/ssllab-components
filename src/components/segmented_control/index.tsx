@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import Icon from "../icon";

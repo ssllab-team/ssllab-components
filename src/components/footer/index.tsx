@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Icon from "../icon";
 
-export default function Footer() {
+export default function Footer(props: { toTerms: () => void }) {
   return (
     <div className="flex flex-col gap-5 w-full md:border-t border-main-brown">
       <div className="md:pl-[96px] p-5 pb-8 flex flex-col gap-6">
@@ -30,14 +29,17 @@ export default function Footer() {
             <div className="text-caption-10 font-light text-gray-500">개인정보 담당자 : 윤건재(010-3455-5341)</div>
           </div>
         </div>
-        <Link
+        <a
           href="https://fptovmbgnongnwzkdmdj.supabase.co/storage/v1/object/public/homepage_assets/ssllab_terms.pdf"
           rel="noopener noreferrer"
           target="_blank"
           className="flex items-center gap-6 text-gray-500 text-caption-10 md:text-caption-12 font-light md:font-regular"
         >
           개인정보처리방침
-        </Link>
+        </a>
+        <div className="flex items-center gap-6 text-gray-500 text-caption-10 md:text-caption-12 font-light md:font-regular">
+          개인정보처리방침
+        </div>
       </div>
     </div>
   );

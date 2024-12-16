@@ -1,5 +1,3 @@
-"use client";
-
 import { ChangeEvent, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import Button from "@/components/button";

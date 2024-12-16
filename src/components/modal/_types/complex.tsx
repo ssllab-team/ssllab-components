@@ -1,5 +1,3 @@
-"use client";
-
 import Button from "@/components/button";
 import Icon from "@/components/icon";
 import React, { ReactNode, useEffect, useState } from "react";

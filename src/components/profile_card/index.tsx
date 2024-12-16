@@ -1,5 +1,3 @@
-"use client";
-
 import Icon from "../icon";
 
 export default function ProfileCard(props: { nickname?: string; phoneNum?: string; onEdit?: () => void }) {
