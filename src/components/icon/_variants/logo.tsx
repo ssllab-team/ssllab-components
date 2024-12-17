@@ -1,4 +1,4 @@
-export function Logo(props: { size: keyof typeof LogoSpecifications; color: "navy" | "brown" | "white" }) {
+export function Logo(props: { size: 80 | 40 | 20; color: "navy" | "brown" | "white" }) {
   const finalColor = props.color === "navy" ? "#121212" : props.color === "brown" ? "#60584F" : "#fff";
   const LogoSpecifications = {
     80: {

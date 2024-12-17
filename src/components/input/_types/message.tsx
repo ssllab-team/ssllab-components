@@ -18,7 +18,7 @@ export default function Message(props: {
   };
 
   const handleSend = () => {
-    props.onSend && props.onSend(message);
+    if (props.onSend) props.onSend(message);
     setMessage("");
   };
 

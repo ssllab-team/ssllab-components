@@ -3,6 +3,11 @@
 
 import { ReactNode, useEffect, useState } from "react";
 
+const colors = {
+  success: "bg-main-navy",
+  error: "bg-error-red"
+};
+
 export default function Toast(props: { message: string; icon: ReactNode; variant: keyof typeof colors }) {
   const [visible, setVisible] = useState(false);
   const [animate, setAnimate] = useState(false);
@@ -23,11 +28,6 @@ export default function Toast(props: { message: string; icon: ReactNode; variant
       clearTimeout(hideTimeout);
     };
   }, []);
-
-  const colors = {
-    success: "bg-main-navy",
-    error: "bg-error-red"
-  };
 
   return (
     visible && (

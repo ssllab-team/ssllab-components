@@ -32,7 +32,7 @@ export default function Textarea(props: {
   };
 
   const handleDelete = () => {
-    props.onDelete && props.onDelete();
+    if (props.onDelete) props.onDelete();
   };
 
   const adjustTextareaHeight = () => {

@@ -5,7 +5,7 @@ import Icon from "../../icon";
 export default function Search(props: { onChange?: (e: string) => void; value?: string; placeholder?: string }) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    props.onChange && props.onChange(value);
+    if (props.onChange) props.onChange(value);
   };
   return (
     <div className="relative w-full">
