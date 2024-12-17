@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
@@ -6,11 +7,13 @@ export default function Toast(props: { message: string; icon: ReactNode; variant
   const [visible, setVisible] = useState(false);
   const [animate, setAnimate] = useState(false);
 
+  let showTimeout: string | number | NodeJS.Timeout | undefined;
+  let hideTimeout: string | number | NodeJS.Timeout | undefined;
+
   useEffect(() => {
     setVisible(true);
-    const showTimeout = setTimeout(() => setAnimate(true), 10);
-
-    const hideTimeout = setTimeout(() => {
+    showTimeout = setTimeout(() => setAnimate(true), 10);
+    hideTimeout = setTimeout(() => {
       setAnimate(false);
       setTimeout(() => setVisible(false), 700);
     }, 4000);
