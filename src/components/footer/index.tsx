@@ -21,7 +21,7 @@ export default function Footer() {
               사업자등록번호 : 614-24-64298
             </div>
             <div className="text-mobile-8 md:text-caption-10 font-regular md:font-light text-gray-500">
-              통신판매신고번호 : 614-24-64298
+              통신판매신고번호 : 6142464298
             </div>
             <div className="text-mobile-8 md:text-caption-10 font-regular md:font-light text-gray-500">
               주소 : (32140) 충청남도 태안군 태안읍 샘골로 42, 405호(보령주택3차)
@@ -37,9 +37,6 @@ export default function Footer() {
         >
           개인정보처리방침
         </a>
-        <div className="flex items-center gap-6 text-gray-500 text-caption-10 md:text-caption-12 font-light md:font-regular">
-          개인정보처리방침
-        </div>
       </div>
     </div>
   );
