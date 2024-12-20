@@ -163,20 +163,21 @@ function Coin() {
   );
 }
 
-function Copy() {
+function Copy(props: { color?: "white" | "beige" }) {
+  const color = props.color === "white" ? "#FFFFFF" : "#B5AA9C";
   return (
     <div className="w-6 h-6 grid place-items-center hover:bg-gray-100 duration-200 rounded">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path
           d="M18.4001 9.6001H11.2001C10.3164 9.6001 9.6001 10.3164 9.6001 11.2001V18.4001C9.6001 19.2838 10.3164 20.0001 11.2001 20.0001H18.4001C19.2838 20.0001 20.0001 19.2838 20.0001 18.4001V11.2001C20.0001 10.3164 19.2838 9.6001 18.4001 9.6001Z"
-          stroke="#B5AA9C"
+          stroke={color}
           strokeWidth="1.4"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M6.4 14.4H5.6C5.17565 14.4 4.76869 14.2314 4.46863 13.9314C4.16857 13.6313 4 13.2243 4 12.8V5.6C4 5.17565 4.16857 4.76869 4.46863 4.46863C4.76869 4.16857 5.17565 4 5.6 4H12.8C13.2243 4 13.6313 4.16857 13.9314 4.46863C14.2314 4.76869 14.4 5.17565 14.4 5.6V6.4"
-          stroke="#B5AA9C"
+          stroke={color}
           strokeWidth="1.4"
           strokeLinecap="round"
           strokeLinejoin="round"

@@ -27,6 +27,7 @@ export default function Complex(props: {
   className?: {
     paper?: string;
     contents?: string;
+    isHeightFit?: boolean;
   };
 }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,18 +57,21 @@ export default function Complex(props: {
                     bg-gray-0 w-fit md:px-10 md:py-8 px-5 py-8 rounded-tl-xl rounded-tr-xl md:rounded-xl
                     flex flex-col gap-6 no-scrollbar
                     transition-all duration-1000 ease-in-out
-                    md:min-w-[475px] max-w-[708px] w-full h-full bottom-0 ${
-                      props.className?.paper
-                    } max-h-[calc(100vh-100px)]
+                    md:min-w-[475px] max-w-[708px] w-full bottom-0 ${props.className?.paper} ${
+          props.className?.isHeightFit ? "h-fit" : "h-full max-h-[calc(100vh-100px)]"
+        }
                     ${isVisible ? "md:bottom-1/2 md:translate-y-1/2" : "md:bottom-0 md:translate-y-full"}
                 `}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex flex-col w-full h-full">
           <div className="w-full h-full flex flex-col gap-5">
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-3">
               <div className="w-full flex justify-between">
-                <div className="text-subheadline-24 font-semibold text-gray-900" style={{ whiteSpace: "break-spaces" }}>
+                <div
+                  className="text-subheadline-24 font-semibold text-gray-900 text-center w-full"
+                  style={{ whiteSpace: "break-spaces" }}
+                >
                   {props.contents.title}
                 </div>
                 <div
@@ -78,14 +82,23 @@ export default function Complex(props: {
                 </div>
               </div>
               {props.contents.subtitle && (
-                <div className="text-body-14 font-regular text-gray-900">{props.contents.subtitle}</div>
+                <div
+                  className="text-body-14 font-regular text-navy-hovered text-center"
+                  style={{ whiteSpace: "break-spaces" }}
+                >
+                  {props.contents.subtitle}
+                </div>
               )}
             </div>
-            <div className="relative w-full h-full">
-              <div className={`absolute w-full h-full overflow-scroll ${props.className?.contents}`}>
-                {props.contents.body}
+            {props.className?.isHeightFit ? (
+              <div className={`w-full ${props.className?.contents}`}>{props.contents.body}</div>
+            ) : (
+              <div className="relative w-full h-full">
+                <div className={`absolute w-full h-full overflow-scroll ${props.className?.contents}`}>
+                  {props.contents.body}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
         {props.buttons && (
