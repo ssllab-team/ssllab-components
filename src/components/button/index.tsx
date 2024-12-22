@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export default function Button(props: {
+export interface ButtonProps {
   variant: "primary" | "secondary" | "tertiary" | "text_main" | "text_sub" | "add";
   size: "icon_only" | "small" | "medium" | "large" | "text" | "add";
   children?: string;
@@ -11,7 +11,9 @@ export default function Button(props: {
     trailing?: ReactNode;
   };
   loading?: boolean;
-}) {
+}
+
+export default function Button(props: ButtonProps) {
   const classes = {
     variant: {
       primary: " bg-main-navy hover:bg-navy-hovered disabled:bg-navy-disabled text-gray-0 ",
