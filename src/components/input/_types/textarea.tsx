@@ -1,3 +1,5 @@
+"use client";
+
 import { ChangeEvent, useRef, useEffect, useState } from "react";
 import { inputBaseClass } from "..";
 import { Popover, PopoverTrigger } from "../../ui/popover";

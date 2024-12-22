@@ -1,18 +1,9 @@
 "use client";
 
-import { ReactNode, useState } from "react";
-import Button from "..";
+import { useState } from "react";
+import Button, { ButtonProps } from "..";
 
-export default function LoadingButton(props: {
-  variant: "primary" | "secondary" | "tertiary" | "text_main" | "text_sub" | "add";
-  size: "icon_only" | "small" | "medium" | "large" | "text" | "add";
-  children?: string;
-  icons?: {
-    leading?: ReactNode;
-    trailing?: ReactNode;
-  };
-  onClick?: () => void;
-}) {
+export default function LoadingButton(props: ButtonProps) {
   const [loading, setLoading] = useState(false);
   const startLoading = () => {
     setLoading(true);
