@@ -20,7 +20,7 @@ const classes = {
     add: " "
   },
   default:
-    " cursor-pointer select-none text-center w-fit duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2 flex-shrink-0 "
+    " cursor-pointer select-none text-center duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2 flex-shrink-0 "
 };
 
 export interface ButtonProps {
