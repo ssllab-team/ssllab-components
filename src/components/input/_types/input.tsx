@@ -38,7 +38,7 @@ export default function Text(props: {
   };
 
   return (
-    <label htmlFor={props.placeholder} className="flex flex-col gap-1 w-full md:min-w-[304px]">
+    <label htmlFor={props.placeholder} className="flex flex-col gap-1 w-full items-start md:min-w-[304px]">
       <div className="text-body-16 font-regular text-gray-900">{props.label}</div>
       <div className={inputBaseClass + " flex gap-2"}>
         <input
