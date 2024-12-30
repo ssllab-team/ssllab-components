@@ -1,11 +1,11 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../button";
 import Icon from "../../icon";
 
-export default function File(props: { onChange?: (files: File[]) => void }) {
+export default function File(props: { onChange?: (files: File[]) => void; initialFiles: File[] }) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [fileData, setFileData] = useState<File[]>([]);
+  const [fileData, setFileData] = useState<File[]>(props.initialFiles);
 
   const handleFileClick = () => {
     if (fileInputRef.current) {
@@ -63,6 +63,11 @@ export default function File(props: { onChange?: (files: File[]) => void }) {
     setFileData(newFiles);
     if (props.onChange) props.onChange(newFiles);
   };
+
+  useEffect(() => {
+    console.log("fileData", fileData);
+    console.log("props.initialFiles", props.initialFiles);
+  }, [fileData, props.initialFiles]);
 
   return (
     <div className="flex flex-col gap-5 flex-grow">
