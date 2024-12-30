@@ -1,5 +1,5 @@
 export function Logo(props: { size: 80 | 40 | 20; color: "navy" | "brown" | "white" }) {
-  const finalColor = props.color === "navy" ? "#121212" : props.color === "brown" ? "#60584F" : "#fff";
+  const finalColor = props.color === "navy" ? "#071A3A" : props.color === "brown" ? "#60584F" : "#fff";
   const LogoSpecifications = {
     80: {
       width: 80,

@@ -1,3 +1,5 @@
+"use client";
+
 import { ChangeEvent } from "react";
 import { inputBaseClass } from "..";
 import Icon from "../../icon";

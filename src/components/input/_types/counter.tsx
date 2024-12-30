@@ -1,3 +1,5 @@
+"use client";
+
 export default function Counter(props: { type: "plus" | "minus"; onClick: () => void }) {
   return (
     <div className="flex items-center gap-2">

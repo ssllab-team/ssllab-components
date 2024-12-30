@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="md:pl-[96px] p-5 pb-8 flex flex-col gap-6">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <Icon.Logo color="brown" size={20} />
+            <Icon.Logo color="navy" size={20} />
             <div className="text-gray-900 text-caption-12 md:text-body-14 font-semibold md:font-medium">쓸랩</div>
           </div>
           <div className="flex flex-col gap-2">
