@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Button from "../../button";
 import Icon from "../../icon";
 
@@ -63,11 +63,6 @@ export default function File(props: { onChange?: (files: File[]) => void; initia
     setFileData(newFiles);
     if (props.onChange) props.onChange(newFiles);
   };
-
-  useEffect(() => {
-    console.log("fileData", fileData);
-    console.log("props.initialFiles", props.initialFiles);
-  }, [fileData, props.initialFiles]);
 
   return (
     <div className="flex flex-col gap-5 flex-grow">
