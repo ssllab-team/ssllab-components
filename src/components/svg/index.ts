@@ -1,5 +1,6 @@
 import EdgeLinks from "./_types/edge_links";
 import LogIn from "./_types/log_in";
+import OtherItem from "./_types/other_item";
 import Papers from "./_types/papers";
 import Referral from "./_types/referral";
 import ReferralGift from "./_types/referral_gift";
@@ -13,7 +14,8 @@ const SVG = {
   Papers,
   EdgeLinks,
   Referral,
-  ReferralGift
+  ReferralGift,
+  OtherItem
 };
 
 export default SVG;

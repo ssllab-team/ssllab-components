@@ -15,6 +15,7 @@ export default function Textarea(props: {
   placeholder: string;
   lengthValue?: number;
   onDelete?: () => void;
+  defaultValue?: string;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -26,7 +27,10 @@ export default function Textarea(props: {
   };
 
   const handleSubtextChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
+    if (!e.target.value) return;
+    if (e.target.value.length > 1 && e.target.value[0] === "0") e.target.value = e.target.value.slice(1);
+    const value = parseInt(e.target.value);
+    if (props.onSubtextChange) props.onSubtextChange(value);
     setValueState(value);
     if (props.onSubtextChange) {
       props.onSubtextChange(value);
@@ -62,6 +66,7 @@ export default function Textarea(props: {
         value={props?.value}
         name={props.placeholder}
         className={inputBaseClass}
+        defaultValue={props.defaultValue}
       />
       {props.onSubtextChange && (
         <div className="w-full flex justify-between items-center">
