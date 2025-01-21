@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useRef, useEffect, useState } from "react";
+import { ChangeEvent, useRef, useEffect } from "react";
 import { inputBaseClass } from "..";
 import { Popover, PopoverTrigger } from "../../ui/popover";
 import Icon from "../../icon";
@@ -8,18 +8,17 @@ import Popovers from "../../popover";
 
 export default function Textarea(props: {
   onChange: (e: string) => void;
-  onSubtextChange?: (e: number) => void;
+  onSubtextChange?: (e: string) => void;
   value?: string;
   label: string;
   subLabel?: string;
   placeholder: string;
-  lengthValue?: number;
+  lengthValue?: string;
   onDelete?: () => void;
   defaultValue?: string;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const [valueState, setValueState] = useState(props.lengthValue);
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
     props.onChange(value);
@@ -27,15 +26,9 @@ export default function Textarea(props: {
   };
 
   const handleSubtextChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.value) return;
-    if (e.target.value.length > 1 && e.target.value[0] === "0") e.target.value = e.target.value.slice(1);
-    const value = parseInt(e.target.value);
-    if (props.onSubtextChange) props.onSubtextChange(value);
-    setValueState(value);
-    if (props.onSubtextChange) {
-      props.onSubtextChange(value);
-    }
+    if (props.onSubtextChange) props.onSubtextChange(e.target.value);
   };
+  console.log("props.lengthValue", props.lengthValue);
 
   const handleDelete = () => {
     if (props.onDelete) props.onDelete();
@@ -74,10 +67,9 @@ export default function Textarea(props: {
             <div className="text-body-14 font-regular text-gray-500">글자 수</div>
             <div className="flex flex-col w-[86px]">
               <input
-                type="number"
                 value={props.lengthValue}
                 className={`${
-                  valueState === 0 || !valueState ? "text-gray-200" : "text-gray-900"
+                  props.lengthValue === "0" || !props.lengthValue ? "text-gray-200" : "text-gray-900"
                 } text-body-12 font-medium bg-transparent placeholder:text-gray-200 outline-none text-center border border-gray-200 focus:border-gray-400 rounded w-[86px]`}
                 onChange={handleSubtextChange}
                 placeholder="0"
