@@ -28,7 +28,6 @@ export default function Textarea(props: {
   const handleSubtextChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (props.onSubtextChange) props.onSubtextChange(e.target.value);
   };
-  console.log("props.lengthValue", props.lengthValue);
 
   const handleDelete = () => {
     if (props.onDelete) props.onDelete();
