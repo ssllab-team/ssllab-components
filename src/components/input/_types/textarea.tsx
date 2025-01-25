@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useRef, useEffect } from "react";
+import { ChangeEvent, useRef, useEffect, useState } from "react";
 import { inputBaseClass } from "..";
 import { Popover, PopoverTrigger } from "../../ui/popover";
 import Icon from "../../icon";
@@ -18,6 +18,7 @@ export default function Textarea(props: {
   defaultValue?: string;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [focused, setFocused] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -71,7 +72,9 @@ export default function Textarea(props: {
                   props.lengthValue === "0" || !props.lengthValue ? "text-gray-200" : "text-gray-900"
                 } text-body-12 font-medium bg-transparent placeholder:text-gray-200 outline-none text-center border border-gray-200 focus:border-gray-400 rounded w-[86px]`}
                 onChange={handleSubtextChange}
-                placeholder="0"
+                placeholder={focused ? undefined : "0"}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
               />
             </div>
           </div>
