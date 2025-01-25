@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import Button from "../../button";
 import Icon from "../../icon";
+import ReactMarkdown from "react-markdown";
 
 export default function Assistant(props: {
   name: string;
@@ -58,7 +60,7 @@ export default function Assistant(props: {
             whiteSpace: "break-spaces"
           }}
         >
-          {props.message}
+          <ReactMarkdown>{props.message}</ReactMarkdown>
           {props.button && (
             <div className="w-full flex justify-end">
               <button
