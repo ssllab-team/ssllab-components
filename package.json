@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.5",
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "postcss": "^8.4.49",
