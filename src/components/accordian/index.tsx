@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../button";
 import Icon from "../icon";
 
@@ -19,6 +19,10 @@ export default function Accordian(props: { data: { title: string; description: s
 
 function AccordianItem(props: { title: string; description: string }) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [props.description]);
 
   const openItem = () => setOpen(!open);
   return (
