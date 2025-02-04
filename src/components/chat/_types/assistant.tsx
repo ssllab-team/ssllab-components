@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Button from "../../button";
 import Icon from "../../icon";
 import ReactMarkdown from "react-markdown";
 
 export default function Assistant(props: {
-  name: string;
-  message?: string;
+  name?: string;
+  message?: ReactNode;
   button?: { text: string; onClick: () => void };
   popover?: string;
   select?: { options: string[]; onSelect: (selected: string[]) => void; max?: number };
@@ -52,7 +52,7 @@ export default function Assistant(props: {
   return (
     <div className="flex flex-col gap-2 md:max-w-[548px] w-full pr-3 md:mr-10">
       <div className="flex flex-col gap-1 w-full">
-        <div className="pl-5 text-body-14 font-medium text-gray-800">{props.name}</div>
+        {props.name && <div className="pl-5 text-body-14 font-medium text-gray-800">{props.name}</div>}
         <div
           className="w-full p-4 md:px-5 md:py-4 rounded-xl rounded-bl-none bg-gray-0 border border-gray-100 flex flex-col gap-6 text-body-14 font-regular text-gray-900"
           style={{
@@ -60,7 +60,7 @@ export default function Assistant(props: {
             whiteSpace: "break-spaces"
           }}
         >
-          <ReactMarkdown>{props.message}</ReactMarkdown>
+          {typeof props.message === "string" ? <ReactMarkdown>{props.message}</ReactMarkdown> : props.message}
           {props.button && (
             <div className="w-full flex justify-end">
               <button
