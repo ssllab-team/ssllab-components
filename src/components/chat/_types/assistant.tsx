@@ -89,7 +89,7 @@ export default function Assistant(props: {
                   selectOption(index);
                 }}
               >
-                {option.option}
+                <ReactMarkdown>{option.option}</ReactMarkdown>
               </div>
             ))}
           </div>
